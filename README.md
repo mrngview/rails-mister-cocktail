@@ -24,4 +24,8 @@ Things you may want to cover:
 * ...
 
 
-- Start MODELING.
+- Start modeling done
+
+- Associations done
+
+- Validations
