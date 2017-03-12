@@ -28,4 +28,8 @@ Things you may want to cover:
 
 - Associations done
 
-- Validations
+- Validations done
+
+- parsing JSON file (seed.rb) done
+
+- Routing done
