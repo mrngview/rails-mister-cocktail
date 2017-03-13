@@ -33,3 +33,9 @@ Things you may want to cover:
 - parsing JSON file (seed.rb) done
 
 - Routing done
+
+- Seed for cocktails from Wikipedia list done.
+
+- Index view done.
+
+- TODO --> Play with bootstrap.
