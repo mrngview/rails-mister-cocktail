@@ -7,22 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'json'
+require 'nokogiri'
 require 'open-uri'
 
+######################INGREDIENTS GENERATOR##################################
 url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 file_info = open(url).read
 ingredients_list = JSON.parse(file_info)
-
-# puts "#{user["name"]} - #{user["bio"]}"
-
-# Ingredient.create(name: "lemon")
-# Ingredient.create(name: "ice")
-# Ingredient.create(name: "mint leaves")
-# Ingredient.create(name: "pineapple")
-# Ingredient.create(name: "strawberry")
-# Ingredient.create(name: "mango")
 
 ingredients_list["drinks"].each do |i|
   Ingredient.create(name: i["strIngredient1"])
 end
 
+######################COCKTAILS GENERATOR##################################
+html_file = open("https://en.wikipedia.org/wiki/List_of_cocktails")
+html_doc = Nokogiri::HTML(html_file)
+
+titles = html_doc.css('div.div-col.columns.column-width ul li a')
+array = []
+titles.each do |element|
+  array << element.text
+end
+array.each do |tlt|
+  Cocktail.create(name: tlt)
+end
