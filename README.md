@@ -36,6 +36,8 @@ Things you may want to cover:
 
 - Seed for cocktails from Wikipedia list done.
 
-- Index view done.
+- Index cocktails view done.
+
+- Show cocktail done.
 
 - TODO --> Play with bootstrap.
