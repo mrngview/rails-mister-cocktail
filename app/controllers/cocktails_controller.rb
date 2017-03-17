@@ -8,12 +8,13 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @Cocktail = Cocktail.new
+    @cocktail = Cocktail.new
   end
 
   def create
     @cocktail = Cocktail.create(cocktail_params)
     @cocktail.save
+    redirect_to cocktails_path
   end
 
   def cocktail_params
