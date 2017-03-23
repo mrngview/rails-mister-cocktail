@@ -1,5 +1,23 @@
-<h1>Cocktails#show</h1>
+<p>You have selected <strong><%= @cocktail.name %></strong></p>
 
-<p>You have selected <%= @cocktail.name %></p>
+<% if @cocktail.doses  %>
+<h3>Ingredients</h3>
+<% doses = @cocktail.doses  %>
+<ul>
+  <% doses.each do |dose|  %>
+  <li>
+    Description: <%= dose.description  %> <br>
+  </li>
+  <li>
+    Ingredient: <%= dose.ingredient.name  %>
+  </li>
+  <% end  %>
+</ul>
+<% end  %>
 
 <%= link_to "Back", cocktails_path %>
+<br>
+<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail) %>
+
+
+
