@@ -1,5 +1,11 @@
 <p>You have selected <strong><%= @cocktail.name %></strong></p>
 
+<% @cocktail.photos.each do |photo| %>
+  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+<% end %>
+
+<br>
+
 <% if @cocktail.doses  %>
 <h3>Ingredients</h3>
 <% doses = @cocktail.doses  %>
